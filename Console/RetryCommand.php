@@ -45,7 +45,7 @@ class RetryCommand extends Command
             if (is_null($job)) {
                 $this->error("Unable to find failed job with ID [{$id}].");
             } else {
-                $this->retryJob($job);
+                $this->retryJob((object)$job);
 
                 $this->info("The failed job [{$id}] has been pushed back onto the queue!");
 
